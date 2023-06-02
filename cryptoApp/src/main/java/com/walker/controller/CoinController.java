@@ -20,32 +20,6 @@ public class CoinController {
     @Autowired
     private CoinRepository coinRepository;
 
-    @Bean
-    public Coin init(){
-        Coin c1 = new Coin();
-        c1.setName("BITCOIN");
-        c1.setPrice(new BigDecimal(100));
-        c1.setQuantity(new BigDecimal(0.0005));
-        c1.setDatetime(new Timestamp(currentTimeMillis()));
-
-        Coin c2 = new Coin();
-        c2.setName("BITCOIN");
-        c2.setPrice(new BigDecimal(250));
-        c2.setQuantity(new BigDecimal(0.0025));
-        c2.setDatetime(new Timestamp(currentTimeMillis()));
-
-        Coin c3 = new Coin();
-        c3.setName("ETHEREUM");
-        c3.setPrice(new BigDecimal(500));
-        c3.setQuantity(new BigDecimal(0.0045));
-        c3.setDatetime(new Timestamp(currentTimeMillis()));
-
-        coinRepository.insert(c1);
-        coinRepository.insert(c2);
-        coinRepository.insert(c3);
-
-        return null;
-    }
 
 
     @GetMapping()
