@@ -1,14 +1,29 @@
 package com.walker.entity;
 
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
+@Entity
+@Table(name = "coin")
 public class Coin {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "price")
     private BigDecimal price;
+
+    @Column(name = "quantity")
     private BigDecimal quantity;
+
+    @Column(name = "datetime")
     private Timestamp datetime;
 
     public int getId() {
